@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glossary1.Controller">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#save" text="Save as" />
+            <MenuItem mnemonicParsing="false" onAction="#load" text="Load file" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+        </Menu>
+    </MenuBar>
+    <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="600.0">
+        <top>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                <TextField fx:id="searchText" prefHeight="25.0" prefWidth="450.0" promptText="Find Term" />
+                <Button mnemonicParsing="false" onAction="#search" prefWidth="80.0" text="Search" />
+                <Button mnemonicParsing="false" onAction="#clear" prefWidth="80.0" text="Clear" />
+            </HBox>
+        </top>
+        <center>
+            <TableView fx:id="table" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn fx:id="termCol" prefWidth="200.0" text="Term" />
+                    <TableColumn fx:id="meaningCol" maxWidth="400.0" prefWidth="400.0" text="Meaning" />
+                </columns>
+            </TableView>
+        </center>
+        <bottom>
+            <VBox prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="600.0">
+                    <TextField fx:id="addTermText" prefWidth="220.0" promptText="Term" />
+                    <TextField fx:id="addMeaningText" prefWidth="300.0" promptText="Meaning" />
+                    <Button mnemonicParsing="false" onAction="#add" prefWidth="80.0" text="Add" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <TextField fx:id="updateTermText" prefWidth="220.0" promptText="Term" />
+                    <TextField fx:id="updateMeaningText" prefWidth="300.0" promptText="Meaning" />
+                    <Button mnemonicParsing="false" onAction="#update" prefWidth="80.0" text="Update" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <TextField fx:id="removeTermText" prefWidth="220.0" promptText="Term" />
+                    <Button mnemonicParsing="false" onAction="#remove" prefWidth="80.0" text="Remove" />
+                </HBox>
+            </VBox>
+        </bottom>
+    </BorderPane>
+</VBox>
